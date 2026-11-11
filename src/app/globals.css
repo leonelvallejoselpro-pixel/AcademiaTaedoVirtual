@@ -1,0 +1,39 @@
+@import "tailwindcss";
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; background:#06132f; color:#fff; font-family:Arial,Helvetica,sans-serif; }
+a { color:inherit; text-decoration:none; }
+button { cursor:pointer; }
+.shell { min-height:100vh; overflow:hidden; background:#06132f; }
+.topbar { height:82px; display:flex; align-items:center; justify-content:space-between; padding:10px clamp(18px,4vw,58px); border-bottom:4px solid #e31b2b; background:#06122d; }
+.brand { display:flex; align-items:center; gap:14px; font-size:clamp(17px,2vw,27px); font-weight:800; }
+.brand img { width:64px;height:64px;object-fit:cover;border-radius:50%;border:2px solid #fff; }
+.brand em { color:#e31b2b;font-style:normal; }
+.nav { display:flex;gap:24px;align-items:center;color:#e7ecfa;font-weight:700;font-size:14px; }
+.nav a:hover { color:#ff424d; }
+.hero { min-height:690px; display:grid; grid-template-columns:1.05fr .95fr; position:relative; background:linear-gradient(90deg,rgba(3,12,31,.12),#06132f 53%,#06132f); }
+.action-scene { min-height:690px; background-image:linear-gradient(90deg,rgba(3,10,25,.08),rgba(4,14,36,.15) 65%,#06132f 100%),url('/wt-sparring-hero.jpg'); background-size:cover;background-position:center;position:relative; }
+.action-scene:after { content:"";position:absolute;inset:auto 0 0;height:12px;background:linear-gradient(90deg,#153e9a 0 38%,#fff 38% 43%,#e31b2b 43% 100%); }
+.motto { position:absolute;left:clamp(22px,5vw,70px);bottom:54px;font-size:clamp(26px,4vw,48px);font-weight:900;font-style:italic;text-shadow:0 3px 15px #000;max-width:450px; }
+.motto span { color:#ff3444;display:block;font-size:1.22em; }
+.login-side { display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px clamp(20px,4vw,58px);text-align:center; }
+.main-logo { width:170px;height:170px;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 5px #243d9c,0 0 34px #4269ff;margin-bottom:20px; }
+h1 { font-size:clamp(34px,4.4vw,58px);line-height:1.02;margin:0 0 10px;font-weight:900;font-style:italic; }
+h1 span { color:#ef2638; }
+.subtitle { letter-spacing:.16em;font-size:13px;font-weight:800;color:#dce5ff;margin:0 0 28px; }
+.login-card { width:min(100%,520px);background:#fff;color:#101a38;border-radius:22px;padding:30px;box-shadow:0 0 0 3px #e21f32,0 0 0 6px #2848aa; }
+.login-card h2 { margin:0 0 10px;font-size:22px; }
+.login-card p { color:#5c6680;line-height:1.5;margin:0 0 20px; }
+.btn { display:flex;align-items:center;justify-content:center;width:100%;border:0;border-radius:12px;padding:15px 18px;background:#e31b2b;color:#fff;font-weight:900;font-size:16px; }
+.btn:hover { background:#bd1423; }
+.features { display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:20px clamp(18px,4vw,58px);background:#071633;border-top:3px solid #e31b2b; }
+.feature { padding:17px 12px;border:1px solid #52618c;border-radius:14px;background:linear-gradient(135deg,#102b67,#08152f);text-align:center;font-weight:800; }
+.feature small { display:block;color:#b9c6e6;font-weight:500;margin-top:6px; }
+.footer { padding:20px;text-align:center;border-top:2px solid #e31b2b;color:#b9c6e6;background:#040d22;font-size:13px; }
+@media(max-width:850px) {
+ .topbar{height:auto;min-height:72px}.nav{display:none}
+ .hero{grid-template-columns:1fr}.action-scene{min-height:370px;background-position:center 30%}
+ .motto{bottom:25px;font-size:28px}.login-side{padding:35px 20px 45px}
+ .main-logo{width:125px;height:125px} .features{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:430px){.brand img{width:48px;height:48px}.features{grid-template-columns:1fr 1fr}.feature{font-size:13px}}
